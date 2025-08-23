@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIM FINISHERS AND COMPOUND DESIGNER U LTD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --gold: #D4AF37;
+            --green: #006400;
+            --black: #000000;
+            --light-gold: #F1E5AC;
+            --light-green: #E8F5E8;
+            --dark-gold: #B8860B;
+            --dark-green: #004d00;
+            --gray: #333333;
+            --light-gray: #f4f4f4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--gray);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--green);
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            margin: 10px auto;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--black);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--green);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Hero Slider Styles */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            color: white;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-content h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .slide-content h1 span {
+            color: var(--gold);
+        }
+        
+        .slide-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--light-gold);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+        
+        .slider-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background: var(--gold);
+        }
+        
+        /* Service Sections */
+        .service-section {
+            padding: 100px 0;
+        }
+        
+        .service-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .service-section:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .service-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .service-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-images {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            min-width: 300px;
+        }
+        
+        .service-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-images img:hover {
+            transform: scale(1.03);
+        }
+        
+        .service-features {
+            background: var(--light-green);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-item i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        
+        /* Video Section */
+        .videos {
+            background-color: white;
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-card {
+            background: var(--light-green);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Team Section */
+        .team {
+            background-color: var(--light-gray);
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            color: var(--green);
+        }
+        
+        .team-info .position {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--black);
+            color: white;
+        }
+        
+        .contact h2 {
+            color: var(--gold);
+        }
+        
+        .contact h2:after {
+            background: var(--green);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--green);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* IMPROVED FAB STYLES */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        
+        .fab-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .fab-button:hover {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+        
+        .fab-button.active {
+            transform: rotate(135deg);
+            background: var(--gold);
+        }
+        
+        .fab-options {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-bottom: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .fab-options.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .fab-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 8px 0;
+        }
+        
+        .fab-option:hover {
+            background: var(--green);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .fab-tooltip {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .fab-option:hover .fab-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--black);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .service-content {
+                flex-direction: column;
+            }
+            
+            .service-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .fab-container {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-home"></i>
+                MIM <span>FINISHERS</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#videos">Projects</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-slider" id="home">
+        <div class="slide" style="background-image: url('images/logo.png');">
+            <div class="slide-content">
+                <h1>MIM FINISHERS &amp; COMPOUND DESIGNERS</h1>
+                <p>WE OFFER QUALITY</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+        
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');">
+            <div class="slide-content">
+                <h1>Landscape &amp; Compound Design</h1>
+                <p>Transforming outdoor spaces into beautiful environments</p>
+                <a href="#services" class="btn">Our Services</a>
+            </div>
+        </div>
+        
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');">
+            <div class="slide-content">
+                <h1>Interior Design Excellence</h1>
+                <p>Creating stunning interior spaces that inspire</p>
+                <a href="#landscape-design" class="btn">View Portfolio</a>
+            </div>
+        </div>
+        
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');">
+            <div class="slide-content">
+                <h1>Professional Construction Services</h1>
+                <p>Quality construction that stands the test of time</p>
+                <a href="#contact" class="btn">Request Quote</a>
+            </div>
+        </div>
+        
+        <div class="slider-nav">
+            <div class="slider-dot"></div>
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                At MIM Finishers & Compound Designers, we offer comprehensive construction and design solutions 
+                with unwavering commitment to quality. Explore our specialized services below.
+            </p>
+        </div>
+    </section>
+
+    <!-- Landscape & Compound Designing Section -->
+    <section id="landscape-design" class="service-section">
+        <div class="container">
+            <h2>Landscape & Compound Designing</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Transform Your Outdoor Spaces</h3>
+                    <p>Our expert team specializes in creating beautiful, functional outdoor environments that complement your property and lifestyle. From initial concept to final implementation, we handle every aspect of landscape and compound design.</p>
+                    <p>We combine aesthetic appeal with practical functionality to create spaces that are not only visually stunning but also serve your specific needs.</p>
+                    <a href="#contact" class="btn">Request Consultation</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/20 (5).jpg" alt="Landscape Design">
+                    <img src="images/20 (3).jpg" alt="Landscape Design">
+                    <img src="images/20 (2).jpg" alt="Landscape Design">
+                    <img src="images/20 (1).jpg" alt="Landscape Design">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Landscape Design Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-tree"></i>
+                        <div>
+                            <h4>Garden Design</h4>
+                            <p>Beautiful, sustainable garden designs tailored to your climate and preferences</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <h4>Irrigation Systems</h4>
+                            <p>Efficient water management systems to keep your landscape thriving</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h4>Outdoor Lighting</h4>
+                            <p>Strategic lighting to enhance beauty and security of your compound</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-road"></i>
+                        <div>
+                            <h4>Pathway Design</h4>
+                            <p>Functional and attractive walkways that complement your landscape</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finishing Work Section -->
+    <section id="finishing-work" class="service-section">
+        <div class="container">
+            <h2>Finishing Work</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Excellence in Every Detail</h3>
+                    <p>Our finishing work is where precision meets perfection. We pay exceptional attention to detail in all aspects of finishing to ensure a polished and professional result that exceeds expectations.</p>
+                    <p>From paintwork to trim, flooring to fixtures, our craftsmen take pride in delivering flawless finishes that elevate the overall quality of your space.</p>
+                    <a href="#contact" class="btn">Discuss Your Project</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/1 (5).jpg" alt="Finishing Work">
+                    <img src="images/1 (17).jpg" alt="Finishing Work">
+                    <img src="images/1 (15).jpg" alt="Finishing Work">
+                    <img src="images/1 (14).jpg" alt="Finishing Work">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Finishing Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-paint-roller"></i>
+                        <div>
+                            <h4>Painting & Decorating</h4>
+                            <p>Professional painting services with quality materials and techniques</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-border-style"></i>
+                        <div>
+                            <h4>Trim Work</h4>
+                            <p>Precision trim installation for doors, windows, and architectural features</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-layer-group"></i>
+                        <div>
+                            <h4>Flooring Installation</h4>
+                            <p>Expert installation of hardwood, tile, laminate, and other flooring materials</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tools"></i>
+                        <div>
+                            <h4>Final Touches</h4>
+                            <p>Attention to detail in all final elements for a complete, polished look</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with the other 4 service sections following the same pattern -->
+    <!-- Interior Designing Section -->
+    <section id="interior-design" class="service-section">
+        <div class="container">
+            <h2>Interior Designing</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Beautiful, Functional Interiors</h3>
+                    <p>Our interior design services transform spaces into functional, safe, and beautiful environments tailored to your specific needs and preferences. We create interiors that reflect your personality while maximizing functionality.</p>
+                    <p>From color schemes to furniture selection, lighting to spatial planning, we consider every element to create cohesive and inviting interior spaces.</p>
+                    <a href="#contact" class="btn">Schedule a Design Consultation</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/1 (13).jpg" alt="Interior Design">
+                    <img src="images/1 (12).jpg" alt="Interior Design">
+                    <img src="images/1 (11).jpg" alt="Interior Design">
+                    <img src="images/1 (10).jpg" alt="Interior Design">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Interior Design Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-couch"></i>
+                        <div>
+                            <h4>Space Planning</h4>
+                            <p>Optimizing layout for functionality and flow in residential and commercial spaces</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-palette"></i>
+                        <div>
+                            <h4>Color Consultation</h4>
+                            <p>Expert guidance on color schemes that create the desired mood and atmosphere</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h4>Lighting Design</h4>
+                            <p>Strategic lighting plans that enhance functionality and ambiance</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-box-open"></i>
+                        <div>
+                            <h4>Furniture Selection</h4>
+                            <p>Curating furniture pieces that combine style, comfort, and functionality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landscape and Architectural Designing Section -->
+    <section id="architectural-design" class="service-section">
+        <div class="container">
+            <h2>Landscape and Architectural Designing</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Integrated Design Solutions</h3>
+                    <p>We provide comprehensive design solutions that seamlessly integrate both landscape and architectural elements. Our holistic approach ensures that your built environment harmonizes with its natural surroundings.</p>
+                    <p>By considering both architecture and landscape as interconnected elements, we create properties that are not only beautiful but also functionally efficient and environmentally responsive.</p>
+                    <a href="#contact" class="btn">Discuss Your Vision</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/1 (9).jpg" alt="Architectural Design">
+                    <img src="images/1 (6).jpg" alt="Architectural Design">
+                    <img src="images/1 (8).jpg" alt="Architectural Design">
+                    <img src="images/1 (7).jpg" alt="Architectural Design">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Integrated Design Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-drafting-compass"></i>
+                        <div>
+                            <h4>Architectural Planning</h4>
+                            <p>Comprehensive architectural designs that meet your functional and aesthetic needs</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <h4>Site Integration</h4>
+                            <p>Seamless integration of buildings with their natural surroundings</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-draw-polygon"></i>
+                        <div>
+                            <h4>3D Visualization</h4>
+                            <p>Detailed 3D models to help you visualize the final result before construction</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clipboard-check"></i>
+                        <div>
+                            <h4>Regulatory Compliance</h4>
+                            <p>Ensuring all designs meet local building codes and regulations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Renovations Section -->
+    <section id="renovations" class="service-section">
+        <div class="container">
+            <h2>Renovations</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Transform Your Existing Space</h3>
+                    <p>Our renovation services breathe new life into existing structures, enhancing both functionality and aesthetics. Whether you're updating a single room or transforming an entire property, we bring expertise and precision to every project.</p>
+                    <p>We work closely with you to understand your vision and deliver renovation results that exceed expectations while respecting your budget and timeline.</p>
+                    <a href="#contact" class="btn">Get Renovation Quote</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/1 (5).jpg" alt="Renovations">
+                    <img src="images/1 (4).jpg" alt="Renovations">
+                    <img src="images/1 (3).jpg" alt="Renovations">
+                    <img src="images/1 (2).jpg" alt="Renovations">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Renovation Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-house-damage"></i>
+                        <div>
+                            <h4>Home Renovations</h4>
+                            <p>Complete home transformations that update style and improve functionality</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>Commercial Renovations</h4>
+                            <p>Updating commercial spaces to improve workflow, aesthetics, and value</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bath"></i>
+                        <div>
+                            <h4>Kitchen & Bath Updates</h4>
+                            <p>Specialized renovations for these high-functionality areas of your property</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-expand"></i>
+                        <div>
+                            <h4>Space Reconfiguration</h4>
+                            <p>Modifying layouts to better suit your current needs and lifestyle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Services Section -->
+    <section id="construction" class="service-section">
+        <div class="container">
+            <h2>Construction Services</h2>
+            <div class="service-content">
+                <div class="service-text">
+                    <h3>Complete Construction Solutions</h3>
+                    <p>We provide end-to-end construction services from ground up, using quality materials and skilled workmanship to bring your vision to life. Our comprehensive approach ensures that every aspect of your project is handled with expertise and attention to detail.</p>
+                    <p>From foundation to finish, we maintain the highest standards of construction excellence, delivering results that stand the test of time.</p>
+                    <a href="#contact" class="btn">Start Your Project</a>
+                </div>
+                <div class="service-images">
+                    <img src="images/1 (6).jpg" alt="Construction">
+                    <img src="images/1 (18).jpg" alt="Construction">
+                    <img src="images/1 (17).jpg" alt="Construction">
+                    <img src="images/1 (16).jpg" alt="Construction">
+                </div>
+            </div>
+            <div class="service-features">
+                <h3>Our Construction Services Include:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-hard-hat"></i>
+                        <div>
+                            <h4>New Construction</h4>
+                            <p>Building new structures from the ground up with precision and quality</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tools"></i>
+                        <div>
+                            <h4>Project Management</h4>
+                            <p>Comprehensive oversight of all construction phases for seamless execution</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <div>
+                            <h4>Quality Assurance</h4>
+                            <p>Rigorous quality checks at every stage to ensure exceptional results</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h4>Timely Completion</h4>
+                            <p>Efficient project scheduling to ensure your project is completed on time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <div class="video-container">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/xPy25K7CEDY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content">
+                        <h3>Modern Compound Design</h3>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/9tiKkDWXsCc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content">
+                        <h3>Landscape Transformation</h3>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/uqu84e8KgMk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content">
+                        <h3>Interior Finishing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Meet Our Experts</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="images/manager.jpg" alt="Project Manager">
+                    <div class="team-info">
+                        <h3>John Mugisha</h3>
+                        <p class="position">Senior Project Manager</p>
+                        <p>"At MIM Finishers, we believe that attention to detail makes all the difference. Our team is committed to delivering exceptional quality in every project we undertake. We don't just build structures; we create spaces that inspire and endure."</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="images/lead.jpg" alt="Design Lead">
+                    <div class="team-info">
+                        <h3>Sarah Nakato</h3>
+                        <p class="position">Lead Designer</p>
+                        <p>"Good design is about creating spaces that are not only beautiful but also functional. We work closely with our clients to bring their vision to life while adding our expertise. The best designs emerge when we listen carefully to our clients' needs and aspirations."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Reach out to us for a consultation or quote on your next project. We're here to bring your vision to life.</p>
+            </div>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>+256 781 388888</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>mimfinisherscompounddesigners@gmail.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>Entebbe Rd Kitende</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MIM FINISHERS</h3>
+                    <p>We Offer Quality in all our services, from design to execution. Your vision, our expertise.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="#landscape-design" style="color: white; text-decoration: none;">Landscape Design</a></li>
+                        <li><a href="#finishing-work" style="color: white; text-decoration: none;">Finishing Work</a></li>
+                        <li><a href="#interior-design" style="color: white; text-decoration: none;">Interior Design</a></li>
+                        <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100063927578526" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://vm.tiktok.com/ZMHGCv4CWNwth-aeW5B/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/256781388888" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 MIM Finishers and Compound Designer U LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMPROVED FAB -->
+    <div class="fab-container">
+        <div class="fab-button" id="fabButton">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="fab-options" id="fabOptions">
+            <a href="tel:+256781388888" class="fab-option">
+                <i class="fas fa-phone"></i>
+                <span class="fab-tooltip">Call Us</span>
+            </a>
+            <a href="https://wa.me/256781388888" target="_blank" class="fab-option">
+                <i class="fab fa-whatsapp"></i>
+                <span class="fab-tooltip">WhatsApp</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100063927578526" target="_blank" class="fab-option">
+                <i class="fab fa-facebook-f"></i>
+                <span class="fab-tooltip">Facebook</span>
+            </a>
+            <a href="https://vm.tiktok.com/ZMHGCv4CWNwth-aeW5B/" target="_blank" class="fab-option">
+                <i class="fab fa-tiktok"></i>
+                <span class="fab-tooltip">TikTok</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Hero Slider Functionality
+        const heroSlides = document.querySelectorAll('.hero-slider .slide');
+        const heroDots = document.querySelectorAll('.slider-dot');
+        let currentHeroSlide = 0;
+        
+        function showHeroSlide(n) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroDots.forEach(dot => dot.classList.remove('active'));
+            
+            currentHeroSlide = (n + heroSlides.length) % heroSlides.length;
+            
+            heroSlides[currentHeroSlide].classList.add('active');
+            heroDots[currentHeroSlide].classList.add('active');
+        }
+        
+        function nextHeroSlide() {
+            showHeroSlide(currentHeroSlide + 1);
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(nextHeroSlide, 5000);
+        
+        // Add click events to dots
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showHeroSlide(index);
+            });
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+        
+        // IMPROVED FAB functionality
+        const fabButton = document.getElementById('fabButton');
+        const fabOptions = document.getElementById('fabOptions');
+        
+        // Toggle FAB options on button click
+        fabButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            fabOptions.classList.toggle('active');
+        });
+        
+        // Keep FAB options visible when hovering over them
+        fabOptions.addEventListener('mouseenter', function() {
+            fabButton.classList.add('active');
+            this.classList.add('active');
+        });
+        
+        fabOptions.addEventListener('mouseleave', function() {
+            if (!fabButton.matches(':hover')) {
+                fabButton.classList.remove('active');
+                this.classList.remove('active');
+            }
+        });
+        
+        // Hide FAB options when clicking outside
+        document.addEventListener('click', function(event) {
+            const isFabClick = fabButton.contains(event.target) || fabOptions.contains(event.target);
+            if (!isFabClick) {
+                fabButton.classList.remove('active');
+                fabOptions.classList.remove('active');
+            }
+        });
+        
+        // Hide FAB options when scrolling
+        window.addEventListener('scroll', function() {
+            fabButton.classList.remove('active');
+            fabOptions.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
