@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIM FINISHERS AND COMPOUND DESIGNER U LTD</title>
+    <title>MIM CONSTRUCTION AND COMPOUND DESIGNER U LTD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -30,8 +30,6 @@
             scroll-behavior: smooth;
         }
         
-
-             
         body {
             line-height: 1.6;
             color: var(--gray);
@@ -101,7 +99,7 @@
         header {
             background-color: var(--black);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -124,13 +122,15 @@
             align-items: center;
         }
         
-        .logo span {
-            color: var(--green);
+        .logo-img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+            border-radius: 5px;
         }
         
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
+        .logo span {
+            color: var(--green);
         }
         
         nav ul {
@@ -344,6 +344,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
         }
         
         .video-content {
@@ -550,6 +551,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             margin: 8px 0;
+            position: relative;
         }
         
         .fab-option:hover {
@@ -629,6 +631,14 @@
                 bottom: 20px;
                 right: 20px;
             }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -637,8 +647,11 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-home"></i>
-                MIM <span>FINISHERS</span>
+                <!-- Logo added here -->
+                <img src="images/MIM.jpg" 
+                     alt="MIM Construction Logo" 
+                     class="logo-img">
+                MIM C& <span>CD UG LTD</span>
             </a>
             
             <div class="menu-toggle">
@@ -661,7 +674,7 @@
     <section class="hero-slider" id="home">
         <div class="slide" style="background-image: url('images/logo.png');">
             <div class="slide-content">
-                <h1>MIM FINISHERS &amp; COMPOUND DESIGNERS</h1>
+                <h1>MIM CONSTRUCTION &amp; COMPOUND DESIGNERS</h1>
                 <p>WE OFFER QUALITY</p>
                 <a href="#contact" class="btn">Get in Touch</a>
             </div>
@@ -675,7 +688,7 @@
             </div>
         </div>
         
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');">
+        <div class="slide" style="background-image: url('images/DOOR.png');">
             <div class="slide-content">
                 <h1>Interior Design Excellence</h1>
                 <p>Creating stunning interior spaces that inspire</p>
@@ -704,7 +717,7 @@
         <div class="container">
             <h2>Our Services</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-                At MIM Finishers & Compound Designers, we offer comprehensive construction and design solutions 
+                At MIM CONSTRUCTION & Compound Designers, we offer comprehensive construction and design solutions 
                 with unwavering commitment to quality. Explore our specialized services below.
             </p>
         </div>
@@ -834,10 +847,16 @@
                     <a href="services.html?service=interior designing" class="btn" style="margin-left: 10px;">View Gallery</a>
                 </div>
                 <div class="service-images">
-                    <img src="images/interior-designing/1 (13).jpg" alt="Interior Design">
-                    <img src="images/interior-designing/1 (12).jpg" alt="Interior Design">
-                    <img src="images/interior-designing/1 (11).jpg" alt="Interior Design">
-                    <img src="images/interior-designing/1 (10).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (19).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (26).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (27).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (28).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (20).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (21).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/1 (18).jpg" alt="Interior Design">
+                    <img src="images/interior-designing/0 (2).jpeg" alt="Interior Design">
+                    <img src="images/interior-designing/0 (3).jpeg" alt="Interior Design">
+                    <img src="images/interior-designing/0 (1).jpeg" alt="Interior Design">
                 </div>
             </div>
             <div class="service-features">
@@ -1003,6 +1022,12 @@
                     <img src="images/construction-services/1 (18).jpg" alt="Construction">
                     <img src="images/construction-services/1 (17).jpg" alt="Construction">
                     <img src="images/construction-services/1 (16).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (2).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (1).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (3).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (4).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (5).jpg" alt="Construction">
+                    <img src="images/construction-services/1 (7).jpg" alt="Construction">
                 </div>
             </div>
             <div class="service-features">
@@ -1041,14 +1066,15 @@
         </div>
     </section>
 
-    <!-- Video Section -->
+    <!-- Video Section - Fixed YouTube embeds -->
     <section id="videos" class="videos">
         <div class="container">
             <h2>Our Projects</h2>
             <div class="video-container">
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/xPy25K7CEDY" frameborder="0" allowfullscreen></iframe>
+                        <!-- Fixed YouTube embed - using proper embed URL format -->
+                        <iframe src="https://www.youtube.com/embed/XDPE6fTBY7E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-content">
                         <h3>Modern Compound Design</h3>
@@ -1057,7 +1083,8 @@
                 
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/9tiKkDWXsCc" frameborder="0" allowfullscreen></iframe>
+                        <!-- Fixed YouTube embed - using proper embed URL format -->
+                        <iframe src="https://www.youtube.com/embed/xm2ft9v-Sus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-content">
                         <h3>Landscape Transformation</h3>
@@ -1066,7 +1093,8 @@
                 
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/uqu84e8KgMk" frameborder="0" allowfullscreen></iframe>
+                        <!-- Fixed YouTube embed - using proper embed URL format -->
+                        <iframe src="https://www.youtube.com/embed/5PY1SHZWrbE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-content">
                         <h3>Interior Finishing</h3>
@@ -1086,7 +1114,7 @@
                     <div class="team-info">
                         <h3>Mukiibi Mike</h3>
                         <p class="position">Field Manager</p>
-                        <p>"At MIM Finishers, we believe that attention to detail makes all the difference. Our team is committed to delivering exceptional quality in every project we undertake. We don't just build structures; we create spaces that inspire and endure."</p>
+                        <p>"At MIM CONSTRUCTION, we believe that attention to detail makes all the difference. Our team is committed to delivering exceptional quality in every project we undertake. We don't just build structures; we create spaces that inspire and endure."</p>
                     </div>
                 </div>
                 
@@ -1137,7 +1165,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MIM FINISHERS</h3>
+                    <h3>MIM CONSTRUCTION & COMPOUND DESIGNERS U LTD</h3>
                     <p>We Offer Quality in all our services, from design to execution. Your vision, our expertise.</p>
                 </div>
                 
@@ -1163,7 +1191,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 MIM Finishers and Compound Designer U LTD. All Rights Reserved.</p>
+                <p>&copy; 2023 MIM CONSTRUCTION and Compound Designer U LTD. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1274,6 +1302,4 @@
         });
     </script>
 </body>
-
 </html>
-
